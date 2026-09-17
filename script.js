@@ -1,3 +1,6 @@
+let humanScore = 0;
+let computerScore = 0;
+
 function getComputerChoice(rock, paper, scissors) {
   rock = Math.random();
   paper = Math.random();
