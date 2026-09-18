@@ -24,7 +24,7 @@ function getHumanChoice() {
     "This is round " +
       (roundPlayed + 1) +
       ". Please enter one of the following values: paper, rock or scissors",
-  );
+  ).toLowerCase();
 }
 
 // Compares computer's and player's values once both are converted to numbers, defines the winner, returns the result
@@ -77,7 +77,6 @@ function changeScore() {
 // Converts human choice from prompt to a number, which is passed to comparison function
 function convertHumanChoice() {
   let humanChoice = getHumanChoice();
-  humanChoice = humanChoice.toLowerCase();
   if (humanChoice == "rock") {
     return 3;
   } else if (humanChoice == "paper") {
