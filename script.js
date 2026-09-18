@@ -36,7 +36,7 @@ function compareChoice(humanChoice, computerChoice) {
         return "lose";
       }
     } else {
-      if (humanChoice - compareChoice == 2) {
+      if (humanChoice - computerChoice == 2) {
         return "win";
       } else {
         return "lose";
