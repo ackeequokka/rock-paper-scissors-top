@@ -1,26 +1,21 @@
-let humanScore = 0;
-let computerScore = 0;
-
-function getComputerChoice(rock, paper, scissors) {
-  rock = Math.random();
-  paper = Math.random();
-  scissors = Math.random();
+function getComputerChoice() {
+  let rock = Math.random();
+  let paper = Math.random();
+  let scissors = Math.random();
 
   if (rock > paper && rock > scissors) {
-    choice = "rock";
+    return 3;
   } else if (paper > rock && paper > scissors) {
-    choice = "paper";
+    return 2;
   } else {
-    choice = "scissors";
+    return 1;
   }
-  return choice;
 }
 
 function getHumanChoice() {
-  let humanChoice = prompt(
+  return prompt(
     "Please enter one of the following values: paper, rock or scissors",
   );
-  return humanChoice;
 }
 
 console.log(getComputerChoice());
