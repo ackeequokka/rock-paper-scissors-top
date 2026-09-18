@@ -21,5 +21,25 @@ function getHumanChoice() {
   );
 }
 
+function compareChoice(humanChoice, computerChoice) {
+  if (humanChoice == computerChoice) {
+    roundResult = "tie";
+  } else {
+    if (humanChoice < 3) {
+      if (computerChoice - humanChoice == 1) {
+        roundResult = "win";
+      } else {
+        roundResult = "loose";
+      }
+    } else {
+      if (humanChoice - compareChoice == 2) {
+        roundResult = "win";
+      } else {
+        roundResult = "loose";
+      }
+    }
+  }
+}
+
 console.log(getComputerChoice());
 console.log(getHumanChoice());
