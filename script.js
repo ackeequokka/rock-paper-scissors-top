@@ -21,7 +21,9 @@ function getComputerChoice() {
 // Gets human choice via prompt
 function getHumanChoice() {
   return prompt(
-    "Please enter one of the following values: paper, rock or scissors",
+    "This is round " +
+      (roundPlayed + 1) +
+      ". Please enter one of the following values: paper, rock or scissors",
   );
 }
 
@@ -88,14 +90,14 @@ function game() {
   playRound();
 
   if (humanScore > computerScore) {
-    console.log("You won!");
+    alert("You won!");
   } else if (computerScore > humanScore) {
-    console.log("Robot won...");
+    alert("Robot won...");
   } else {
     if (humanScore == 0 && computerScore == 0) {
-      console.log("You had 5 ties in row, which has a probability of 0,41%");
+      alert("You had 5 ties in row, which has a probability of 0,41%");
     } else {
-      console.log("It's a tie.");
+      alert("It's a tie.");
     }
   }
 }
