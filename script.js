@@ -50,7 +50,9 @@ function compareChoice(humanChoice, computerChoice) {
 
 function playRound() {
   let computerChoice = getComputerChoice();
+  console.log(computerChoice);
   let humanChoice = convertHumanChoice();
+  console.log(humanChoice);
   roundResult = compareChoice(humanChoice, computerChoice);
   changeScore(computerChoice, humanChoice);
   roundPlayed = roundPlayed + 1;
@@ -60,12 +62,15 @@ function playRound() {
 function changeScore() {
   if (roundResult == "win") {
     humanScore = humanScore + 1;
-    console.log("You won! Your score is " + humanScore);
+    console.log("You won! Your score is now " + humanScore);
+    alert("You won! Your score is now " + humanScore);
   } else if (roundResult == "lose") {
     computerScore = computerScore + 1;
-    console.log("You lost! Computer's score is " + computerScore);
+    console.log("You lost! Computer's score is now " + computerScore);
+    alert("You lost! Computer's score is now " + computerScore);
   } else {
-    console.log("It's a tie. Score was not changed");
+    console.log("It's a tie. Score was not changed ");
+    alert("It's a tie. Score was not changed ");
   }
 }
 
