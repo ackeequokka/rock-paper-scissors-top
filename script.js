@@ -86,7 +86,11 @@ function convertHumanChoice() {
   }
 }
 
-function game() {
+function playGame() {
+  humanScore = 0;
+  computerScore = 0;
+  roundPlayed = 0;
+
   playRound();
   playRound();
   playRound();
@@ -106,4 +110,4 @@ function game() {
   }
 }
 
-game();
+playGame();
