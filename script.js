@@ -1,5 +1,6 @@
 let humanScore = 0;
 let computerScore = 0;
+let roundPlayed = 0;
 
 // Returns randomized computer's choice as a number
 // Scissors = 1, paper = 2, rock = 3
@@ -50,16 +51,17 @@ function playRound() {
   let humanChoice = convertHumanChoice();
   roundResult = compareChoice(humanChoice, computerChoice);
   changeScore(computerChoice, humanChoice);
+  roundPlayed = roundPlayed + 1;
   return roundResult;
 }
 
-function changeScore(computerChoice, humanChoice) {
+function changeScore() {
   if (roundResult == "win") {
     humanScore = humanScore + 1;
     console.log("You won! Your score is " + humanScore);
   } else if (roundResult == "lose") {
     computerScore = computerScore + 1;
-    console.log("You won! Your score is " + computerScore);
+    console.log("You lost! Computer's score is " + computerScore);
   } else {
     console.log("It's a tie. Score was not changed");
   }
@@ -68,6 +70,7 @@ function changeScore(computerChoice, humanChoice) {
 // Converts human choice from prompt to a number, which is passed to comparison function
 function convertHumanChoice() {
   let humanChoice = getHumanChoice();
+  humanChoice = humanChoice.toLowerCase();
   if (humanChoice == "rock") {
     return 3;
   } else if (humanChoice == "paper") {
@@ -77,4 +80,24 @@ function convertHumanChoice() {
   }
 }
 
-playRound();
+function game() {
+  playRound();
+  playRound();
+  playRound();
+  playRound();
+  playRound();
+
+  if (humanScore > computerScore) {
+    console.log("You won!");
+  } else if (computerScore > humanScore) {
+    console.log("Robot won...");
+  } else {
+    if (humanScore == 0 && computerScore == 0) {
+      console.log("You had 5 ties in row, which has a probability of 0,41%");
+    } else {
+      console.log("It's a tie.");
+    }
+  }
+}
+
+game();
